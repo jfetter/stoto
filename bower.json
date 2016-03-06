@@ -1,0 +1,24 @@
+{
+  "name": "stoto",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Jillian Fetter <jillian.fetter@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "~1.5.0",
+    "angular-ui-router": "~0.2.18",
+    "jquery": "~2.2.1"
+  }
+}

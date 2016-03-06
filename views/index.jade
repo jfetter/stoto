@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  title Stoto
+  link(rel="stylesheet", href="vendor/bootstrap/dist/css/bootstrap.min.css")
+  link(rel="stylesheet", href="style.css")  
+  script(src='vendor/angular/angular.js')
+body(ng-app="stoto").container-fluid
+  h1 {{test}}    
+  ui-view
+
+  script(src='vendor/angular-ui-router/release/angular-ui-router.min.js')
+  script(src="vendor/jquery/dist/jquery.min.js")
+  script(src="vendor/bootstrap/dist/js/bootstrap.min.js")
+  script(src='module.js')
+  script(src="services.js")
+  script(src="controllers/homeCtrl.js")
+  script(src="controllers/navCtrl.js")
