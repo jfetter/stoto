@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 html(lang="en")
 head
+  base(href="/")
   meta(charset="UTF-8")
   title Stoto
   link(rel="stylesheet", href="vendor/bootstrap/dist/css/bootstrap.min.css")
+  link(rel="stylesheet", href="vendor/sweetalert/dist/sweetalert.css")
   link(rel="stylesheet", href="style.css")  
   script(src='vendor/angular/angular.js')
 body(ng-app="stoto").container-fluid
@@ -21,9 +23,7 @@ body(ng-app="stoto").container-fluid
           li(ng-show="true")
             a(ng-click='logout()') Logout 
           li(ng-show="true")
-            a(ng-click='login()') Login
-          li(ng-show="true")
-            a(ng-click='register()') Register       
+            a(ui-sref='login') Login      
           li(ng-show="true")
             a(ui-sref='home') Home
   ui-view
@@ -31,10 +31,12 @@ body(ng-app="stoto").container-fluid
   script(src='vendor/angular-ui-router/release/angular-ui-router.min.js')
   script(src="vendor/jquery/dist/jquery.min.js")
   script(src="vendor/bootstrap/dist/js/bootstrap.min.js")
+  script(src="vendor/sweetalert/dist/sweetalert.min.js")
+  script(src="vendor/angular-sweetalert/SweetAlert.min.js")
   script(src='module.js')
   script(src="services.js")
   script(src="directives.js")
-  script(src="controllers/authCtrl.js")
+  script(src="controllers/loginCtrl.js")
   script(src="controllers/detailCtrl.js")
   script(src="controllers/homeCtrl.js")
   script(src="controllers/navCtrl.js")

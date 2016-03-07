@@ -19,6 +19,10 @@
     "bootstrap": "~3.3.6",
     "angular": "~1.5.0",
     "angular-ui-router": "~0.2.18",
-    "jquery": "~2.2.1"
+    "jquery": "~2.2.1",
+    "angular-sweetalert": "latest"
+  },
+  "resolutions": {
+    "angular": "~1.5.0"
   }
 }

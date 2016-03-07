@@ -5,12 +5,7 @@ angular.module('stoto')
 .controller('navCtrl', function($scope, $state, AuthService){
 	$scope.logout = function(){
 		AuthService.logout();
+		$state.go('login')
 	};	
-	$scope.login = function(){
-		AuthService.login();
-	}	;
-	$scope.register = function(){
-		AuthService.register();
-	};
 
 })
