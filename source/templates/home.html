@@ -1,5 +1,13 @@
 <div>
-	<h1>{{test}}</h1>
-	<input type="image" class="input image">
-
+	<h1>{{user.name}}</h1>
+</div>
+<div>
+	<button ui-sref="pic.add">Add Pics</button>
+	 <label for="albums" class="">Albums:</label>
+      <select ng-model="albums" class="" placeholder="albums">
+      	<option ng-repeat="album in user.albums track by $index" value="{{album}}">{{album}}</option>
+      </select>
+</div>
+<div ng-repeat="pic in user.pics track by $index">
+	<thumb-nail />
 </div>

@@ -1,0 +1,12 @@
+<div class="pic-left">
+	<img ng-src="{{pic.image}}" alt="image">
+	<span>{{pic.caption}}</span>
+</div>
+<div class="pic-right">
+	<span>{{pic.date}}</span>
+	<span>{{pic.place}}</span>
+	<div>
+		<span ng-repeat="person in pic.people">{{pic.person}}</span>
+	</div>
+</div>
+

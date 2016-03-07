@@ -12,8 +12,7 @@ var picSchema = Schema({
   date: Date,
   place: String,
   album: String,
-  people: Array,
-  password: String
+  people: Array
 });
 
 

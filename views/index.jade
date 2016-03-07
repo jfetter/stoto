@@ -7,7 +7,25 @@ head
   link(rel="stylesheet", href="style.css")  
   script(src='vendor/angular/angular.js')
 body(ng-app="stoto").container-fluid
-  h1 {{test}}    
+  div(ng-controller="navCtrl")
+    nav.navbar.navbar-default
+      .navbar-header
+        button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand() STOTO ALBUM
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        ul.nav.navbar-nav 
+          li(ng-show="true")
+            a(ng-click='logout()') Logout 
+          li(ng-show="true")
+            a(ng-click='login()') Login
+          li(ng-show="true")
+            a(ng-click='register()') Register       
+          li(ng-show="true")
+            a(ui-sref='home') Home
   ui-view
 
   script(src='vendor/angular-ui-router/release/angular-ui-router.min.js')
@@ -15,5 +33,9 @@ body(ng-app="stoto").container-fluid
   script(src="vendor/bootstrap/dist/js/bootstrap.min.js")
   script(src='module.js')
   script(src="services.js")
+  script(src="directives.js")
+  script(src="controllers/authCtrl.js")
+  script(src="controllers/detailCtrl.js")
   script(src="controllers/homeCtrl.js")
   script(src="controllers/navCtrl.js")
+  script(src="controllers/picCtrl.js")
