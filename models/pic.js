@@ -7,11 +7,11 @@ var Pic;
 
 var picSchema = Schema({
   user: {type: Schema.Types.ObjectId, ref: "User"},
-  catption: String,
+  catptch: String,
   image: String,
   date: Date,
   place: String,
-  album: String,
+  story: String,
   people: Array
 });
 

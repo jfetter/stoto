@@ -13,9 +13,14 @@ angular.module('stoto')
 
 	$scope.user = {
 		name: 'MR EXAMPLE', 
-		albums:["ALBUM1","ALBUM2"], 
+		stories:["STORY1","STORY2"], 
 		pics: [{caption: 'test caption 1', image: "https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg"}, 
 		{caption: 'test cap 2', image:"https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg"} ]
 	}
+
+	$scope.showDetails = function(){
+		$state.go('pics.details')
+	}
+
 })
 

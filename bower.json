@@ -20,7 +20,8 @@
     "angular": "~1.5.0",
     "angular-ui-router": "~0.2.18",
     "jquery": "~2.2.1",
-    "angular-sweetalert": "latest"
+    "angular-sweetalert": "latest",
+    "angular-base64-upload": "~0.1.17"
   },
   "resolutions": {
     "angular": "~1.5.0"

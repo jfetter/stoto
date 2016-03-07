@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('stoto', ['ui.router', 'oitozero.ngSweetAlert'])
+angular.module('stoto', ['ui.router', 'oitozero.ngSweetAlert', 'naif.base64'])
 
 // .constant('ENV', {
 
@@ -18,8 +18,8 @@ angular.module('stoto', ['ui.router', 'oitozero.ngSweetAlert'])
 
     .state('home', {url:"/home", templateUrl: "templates/home.html", controller: "homeCtrl"})
     .state('login', {url:"/login", templateUrl: "templates/login.html", controller: "loginCtrl"})
-    .state('pics', {url:"/pics", templateUrl: "<ui-view />", abstract: true})
-    .state('pics.add', {url:"/add", templateUrl: "templates/addimage.html", controller: "PicCtrl"})
-    .state('pics.album', {url:"/album", templateUrl: "templates/album.html", controller: "PicCtrl"})
-    .state('pics.details', {url:"/details", templateUrl: "templates/details.html", controller: "PicCtrl"})
+    // .state('pics', {url:"/pics", templateUrl: "<ui-view />", abstract: true})
+    .state('addPics', {url:"/add", templateUrl: "templates/addimage.html", controller: "picCtrl"})
+    .state('picAlbum', {url:"/album", templateUrl: "templates/album.html", controller: "picCtrl"})
+    .state('picDetails', {url:"/details", templateUrl: "templates/details.html", controller: "picCtrl"})
 })

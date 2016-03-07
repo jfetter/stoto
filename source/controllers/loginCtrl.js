@@ -7,7 +7,7 @@ angular.module('stoto')
 	$scope.register = function(username, password){
 		AuthService.register(username, password)
 		.then(res => {
-			console.log(res.data);
+			//console.log(res.data);
 			swal({   title: "account created!",
 			 	text: "Redirecting to home page",
 			 	timer: 3000, 
@@ -31,7 +31,7 @@ angular.module('stoto')
 	$scope.login = function(username, password){
 		AuthService.login(username, password)
 		.then(res => {
-			console.log(res.data);
+		//	console.log(res.data);
 			localStorage.setItem('token', res.data); 
 			$state.go('home');
 		})

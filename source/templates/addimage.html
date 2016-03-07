@@ -1,4 +1,17 @@
-<form action="submit">
-	
-
+<form name="stotoform" action="submit" ng-submit="createStoto($event)" novalidate>
+	<input ng-model="image" type="file" accept="image/*" base-sixty-four-input>
+	<br>
+	<label for="album">What story is this part of?</label>
+	<input type="text" ng-model="album" placeholder="story name">
+	<br>
+	<label for="captch">What's going on here?</label>
+	<input type="text" ng-model="captch" placeholder="caption">
+	<br>
+	<label for="date">When did this happen?</label>
+	<input type="Date" ng-model="date" >
+	<br>
+	<label for="names">Name your character(s)</label>
+	<input type="text" ng-model="names" placeholder="comma,separate names">
+	<br>
+	<input type="submit">
 </form>

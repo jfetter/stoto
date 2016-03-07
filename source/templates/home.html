@@ -2,12 +2,13 @@
 	<h1>{{user.name}}</h1>
 </div>
 <div>
-	<button ui-sref="pic.add">Add Pics</button>
-	 <label for="albums" class="">Albums:</label>
-      <select ng-model="albums" class="" placeholder="albums">
-      	<option ng-repeat="album in user.albums track by $index" value="{{album}}">{{album}}</option>
+	<button ui-sref="addPics">Add Pics</button>
+	 <label for="stories" class="">Stories:</label>
+      <select ng-model="stories" class="" placeholder="albums">
+      	<option ng-repeat="story in user.stories track by $index" value="{{story}}">{{story}}</option>
       </select>
 </div>
-<div ng-repeat="pic in user.pics track by $index">
+<br><br>
+<div ng-click="showDetails()" ng-repeat="pic in user.pics track by $index">
 	<thumb-nail />
 </div>
