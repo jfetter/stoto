@@ -5,7 +5,7 @@
 	<button ui-sref="addPics">Add Pics</button>
 	 <label for="stories" class="">Stories:</label>
       <select ng-model="stories" class="" placeholder="albums">
-      	<option ng-repeat="story in user.stories track by $index" value="{{story}}">{{stories}}</option>
+      	<option ng-repeat="story in storiesArray track by $index" value="{{story}}">{{story}}</option>
       </select>
 </div>
 <input type="text" placeholder="search all pics"><button ng-click="search()">Search</button>
