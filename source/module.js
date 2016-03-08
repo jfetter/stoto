@@ -3,8 +3,8 @@
 angular.module('stoto', ['ui.router', 'oitozero.ngSweetAlert', 'naif.base64', 'base64', 'angular-jwt'])
 
 .constant('ENV', {
-  API_URL: 'http://localhost:3000'
-  //API_URL: 'https://obscure-brook-51353.herokuapp.com/'
+  //API_URL: 'http://localhost:3000'
+  API_URL: 'https://obscure-brook-51353.herokuapp.com/'
 })
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider){
