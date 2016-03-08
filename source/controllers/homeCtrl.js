@@ -29,11 +29,13 @@ angular.module('stoto')
 
 /////IN PROGRESS////
 $scope.$watch('stories', function(newVal, oldVal){
-	console.log("stories new val", newVal.story)
+	var story = JSON.parse(newVal)
+	story = story.story;
+	console.log("stories new val", story.story)
+	goToStory(story);
 })
 
-$scope.goToStory = function(story){
-	console.log("clicked on choice")
+let goToStory = function(story){
 	$state.go(`story:${story}`)
 }
 //////////
