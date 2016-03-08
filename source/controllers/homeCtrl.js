@@ -2,12 +2,12 @@
 
 angular.module('stoto')
 
-.controller('homeCtrl', function($scope, $state, PicService, AuthService, UserService, $base64){
+.controller('homeCtrl', function($scope, $state, $timeout, PicService, AuthService, UserService, $base64){
 	if (!localStorage.token) {
 		$state.go('login');
 	};
-
-	$scope.stories = PicService.mystories(); 
+ 
+	$scope.storiesObj; 
 	
 	let loadPageData =()=>{
 		UserService.loadinfo()
@@ -18,6 +18,10 @@ angular.module('stoto')
 				item.image = `data:image/${item.filetype};base64,${item.image}`
 				return item;
 			})
+			console.log(res.data.pics, "RES DATA PICS")
+			$timeout(function(){
+				$scope.storiesObj = PicService.assembleStories($scope.pics)
+			},100);
 		})
 		.catch(err => {console.error(err)})
 	} 

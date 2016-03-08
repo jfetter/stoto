@@ -17,28 +17,23 @@ angular.module('stoto')
 })
 
 .service('PicService', function($http, UserService, ENV){
-	let assembleStories = () =>{
+	
+
+	this.assembleStories = (pics) =>{
+			console.log(pics)
 		let storyCollections = {};
-		//name: [array of pic objects]
-		var pics = UserService.userinfo.pics;
 		for(var i = 0; i < pics.length; i ++){
 			var picture = pics[i];
-
-			if (storyCollections.indexOf(picture.story) !== -1 ){
-				story[picture.story] = [picture];
+			console.log(picture.story, "PICTURE")
+			if (!storyCollections.hasOwnProperty(picture.story)){
+				storyCollections[picture.story] = [picture];
 			} else {
 				storyCollections[picture.story].push(picture);
 			}
-			// if (i === pics.length -1){
-			// 	for (key in story){
-			// 		stories.push story[0]
-			// 	}
-			
 		}
+		console.log(storyCollections, "STORY COLLECTIONS")
 		return storyCollections;
 	}
-
-	this.mystories = () => assembleStories;
 
 	this.addStoto = pic =>{
 		console.log(pic);

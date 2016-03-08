@@ -4,8 +4,8 @@
 <div>
 	<button ui-sref="addPics">Add Pics</button>
 	 <label for="stories" class="">Stories:</label>
-      <select ng-model="stories" class="" placeholder="albums">
-      	<option ng-repeat="story in storiesArray track by $index" value="{{story}}">{{story}}</option>
+      <select ng-model="stories" ng-click="showStories()" class="" placeholder="albums">
+      	<option ng-repeat="story in storiesObj track by $index " value="{{story[0]}}">{{story[0].story}}</option>
       </select>
 </div>
 <input type="text" placeholder="search all pics"><button ng-click="search()">Search</button>
