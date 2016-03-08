@@ -32,12 +32,11 @@ angular.module('stoto')
 			$scope.captch ="";
 			$scope.date = "";
 			$scope.names = "";
+			$scope.place ="";
 
 			$scope.stotoform.$setPristine();
 			PicService.addStoto(newStoto)
-			.then(res => {
-				console.log(res.body)
-			})
+			.then(res =>)
 			.catch(err => {
 				console.error(err)
 				swal({   title: "unable to upload file",

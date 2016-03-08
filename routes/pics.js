@@ -2,8 +2,8 @@
 
 var express = require('express');
 var router = express.Router();
-var Pic = require('../models/Pic');
-var User = require('../models/User');
+var Pic = require('../models/pic');
+var User = require('../models/user');
 
 router.get("/:id", function(req, res){
   var id = req.params.id;
