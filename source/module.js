@@ -18,6 +18,6 @@ angular.module('stoto', ['ui.router', 'oitozero.ngSweetAlert', 'naif.base64', 'b
     .state('login', {url:"/login", templateUrl: "templates/login.html", controller: "loginCtrl"})
     // .state('pics', {url:"/pics", templateUrl: "<ui-view />", abstract: true})
     .state('addPics', {url:"/add", templateUrl: "templates/addimage.html", controller: "picCtrl"})
-    .state('picAlbum', {url:"/album", templateUrl: "templates/album.html", controller: "picCtrl"})
+    .state('story', {url:"/story/:storyname", templateUrl: "templates/story.html", controller: "picCtrl"})
     .state('picDetails', {url:"/details", templateUrl: "templates/details.html", controller: "picCtrl"})
 })

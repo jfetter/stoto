@@ -27,14 +27,19 @@ angular.module('stoto')
 	} 
 	loadPageData();
 
-		// $scope.user= {
-		// name: 'MR EXAMPLE', 
-		// stories:["STORY1","STORY2"], 
-		// pics: [{caption: 'test caption 1', image: "https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg"}, 
-		// {caption: 'test cap 2', image:"https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg"} ]
+/////IN PROGRESS////
+$scope.$watch('stories', function(newVal, oldVal){
+	console.log("stories new val", newVal.story)
+})
+
+$scope.goToStory = function(story){
+	console.log("clicked on choice")
+	$state.go(`story:${story}`)
+}
+//////////
 
 	$scope.showDetails = function(){
-		$state.go('pics.details')
+		$state.go('picDetails')
 	}
 
 	$scope.search = function(){
