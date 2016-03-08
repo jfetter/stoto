@@ -1,14 +1,16 @@
 <div>
-	<h1>{{user.name}}</h1>
+	<h1>Welcome {{user.username}}!</h1>
 </div>
 <div>
 	<button ui-sref="addPics">Add Pics</button>
 	 <label for="stories" class="">Stories:</label>
       <select ng-model="stories" class="" placeholder="albums">
-      	<option ng-repeat="story in user.stories track by $index" value="{{story}}">{{story}}</option>
+      	<option ng-repeat="story in user.stories track by $index" value="{{story}}">{{stories}}</option>
       </select>
 </div>
+<input type="text" placeholder="search all pics"><button ng-click="search()">Search</button>
+<!-- <pre>{{search-results |}}</pre> -->
 <br><br>
-<div ng-click="showDetails()" ng-repeat="pic in user.pics track by $index">
+<div ng-click="showDetails()" ng-repeat="pic in pics track by $index">
 	<thumb-nail />
 </div>

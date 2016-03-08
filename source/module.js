@@ -1,13 +1,11 @@
 'use strict';
 
-angular.module('stoto', ['ui.router', 'oitozero.ngSweetAlert', 'naif.base64'])
+angular.module('stoto', ['ui.router', 'oitozero.ngSweetAlert', 'naif.base64', 'base64', 'angular-jwt'])
 
-// .constant('ENV', {
-
-//   API_URL: 'http://localhost:3000'
-//   //API_URL: ''
-
-// })
+.constant('ENV', {
+  API_URL: 'http://localhost:3000'
+  //API_URL: 'https://obscure-brook-51353.herokuapp.com/'
+})
 
 .config(function($stateProvider, $urlRouterProvider, $locationProvider){
 	//get rid of # in url (added 'base tag' to html also)

@@ -2,7 +2,7 @@
 
 angular.module('stoto')
 
-.service('AuthService', function($http){
+.service('AuthService', function($http, ENV){
 	this.logout = () => {localStorage.removeItem('token')}
 
 	this.login = (username, password) => {
@@ -16,15 +16,55 @@ angular.module('stoto')
 	}
 })
 
-.service('PicService', function($http){
-	this.insertPic = pic => console.log(pic);
+.service('PicService', function($http, UserService, ENV){
+	let assembleStories = () =>{
+		let storyCollections = {};
+		//name: [array of pic objects]
+		var pics = UserService.userinfo.pics;
+		for(var i = 0; i < pics.length; i ++){
+			var picture = pics[i];
+
+			if (storyCollections.indexOf(picture.story) !== -1 ){
+				story[picture.story] = [picture];
+			} else {
+				storyCollections[picture.story].push(picture);
+			}
+			// if (i === pics.length -1){
+			// 	for (key in story){
+			// 		stories.push story[0]
+			// 	}
+			
+		}
+		return storyCollections;
+	}
+
+	this.mystories = () => assembleStories;
+
+	this.addStoto = pic =>{
+		console.log(pic);
+		return $http.post('pics/add', pic)
+	}
 })
 
-.service('UserService', function($http){
-	this.loadinfo = (userid) => {
-		$http.get(`/users/load/${userid}`)
-		.then(res => res.data)
-		.catch(err => console.err(err))
+.service('UserService', function($http, jwtHelper, ENV){
+	var userinfo;
+	let decodeJWTToken = () =>{	
+		if(localStorage.token){
+		  var token = localStorage.token;
+		  userinfo = jwtHelper.decodeToken(token);
+	  } else {
+	  	userinfo = "error"
+	  }
+	  console.log("JWT USER INFO", userinfo)
+	  return userinfo;
+	}
+	this.userinfo = () => decodeJWTToken();
+
+	this.loadinfo = () => {
+		var userinfo = this.userinfo();
+		var userid = userinfo._id;
+		console.log(userid, "USER ID IN USER SERVICE")
+		return $http.get(`${ENV.API_URL}/users/home/${userid}`)
 	}
 
 })

@@ -20,7 +20,6 @@ router.post('/login', function(req, res){
 })
 
 
-
 router.post('/register', function(req, res){
   User.register(req.body, function(err, user){
     if(user){ 
@@ -34,9 +33,14 @@ router.post('/register', function(req, res){
   })
 })
 
-router.get("/load:id", function(req, res){
-  //var id = req.params.id;
-  
-})//.populate('pics');
+
+router.get("/home/:id", function(req, res){
+  var id = req.params.id;
+  console.log("IIIIIDDDDD", id)
+  User.findById(id, function(err, foundUser){
+    if (foundUser) foundUser.password =null;
+    res.status(err ? 400 : 200).send(err || foundUser);
+  }).populate('pics')
+})
 
 module.exports = router;

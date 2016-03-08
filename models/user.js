@@ -21,14 +21,10 @@ userSchema.statics.register = function(user, cb){
     bcrypt.hash(user.password, salt, function(err, password) {
       User.find({username: username}, function(err, user){
         if (err || user[0]){return console.log(err || "Username already exists")}
-        console.log(user);
         var newUser = new User;
         newUser.username = username;
         newUser.password = password;
-        console.log(newUser)
         newUser.save(function(err, savedUser){
-          console.log('saved user: ', savedUser)
-          console.log(err);
           savedUser.password = null;
           cb(err, savedUser)
         })
