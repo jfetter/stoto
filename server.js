@@ -14,7 +14,7 @@ mongoose.connect(process.env.MONGOLAB_URI || "mongodb://localhost/stoto");
 app.set('views');
 app.set("view engine", "jade");
 
-require('dotenv').load();
+//require('dotenv').load();
 
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded ({extended: true}));
