@@ -6,12 +6,12 @@ angular.module('stoto')
 	this.logout = () => {localStorage.removeItem('token')}
 
 	this.login = (username, password) => {
-		return $http.post('users/login', {username: username, password, password})
+		return $http.post(`${ENV.API_URL}/users/login`, {username: username, password, password})
 		//console.log("load user info and add cookie or info to local storage", username);
 			
 	}
 	this.register = (username, password) => {
-		return $http.post('users/register', {username: username, password: password})
+		return $http.post(`${ENV.API_URL}/users/register`, {username: username, password: password})
 		//console.log("register new user", username)
 	}
 })
@@ -42,7 +42,7 @@ angular.module('stoto')
 
 	this.addStoto = pic =>{
 		console.log(pic);
-		return $http.post('pics/add', pic)
+		return $http.post(`${ENV.API_URL}/pics/add`, pic)
 	}
 })
 
